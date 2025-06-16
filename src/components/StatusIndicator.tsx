@@ -17,6 +17,15 @@ const StatusIndicator: React.FC = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
+    // Proactively check if we're on HTTPS and redirect to HTTP before attempting any API calls
+    if (window.location.protocol === 'https:') {
+      setError('mixed-content');
+      setLoading(false);
+      // Automatically redirect to HTTP version
+      window.location.href = 'http://localhost:5173';
+      return;
+    }
+
     fetchStatus();
     const interval = setInterval(fetchStatus, 30000); // Check every 30 seconds
     return () => clearInterval(interval);
@@ -36,18 +45,7 @@ const StatusIndicator: React.FC = () => {
     } catch (error) {
       console.error('Failed to fetch system status:', error);
       setStatus(null);
-      
-      // Check if this is a mixed content error or network error from HTTPS to HTTP
-      if (window.location.protocol === 'https:' && (
-        error instanceof TypeError || 
-        (error instanceof Error && error.message === 'Failed to fetch')
-      )) {
-        setError('mixed-content');
-        // Automatically redirect to HTTP version
-        window.location.href = 'http://localhost:5173';
-      } else {
-        setError('connection-failed');
-      }
+      setError('connection-failed');
     } finally {
       setLoading(false);
     }
