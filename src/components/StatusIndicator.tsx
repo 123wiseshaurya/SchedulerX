@@ -43,6 +43,8 @@ const StatusIndicator: React.FC = () => {
         (error instanceof Error && error.message === 'Failed to fetch')
       )) {
         setError('mixed-content');
+        // Automatically redirect to HTTP version
+        window.location.href = 'http://localhost:5173';
       } else {
         setError('connection-failed');
       }
