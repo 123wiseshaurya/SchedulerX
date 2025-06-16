@@ -37,8 +37,11 @@ const StatusIndicator: React.FC = () => {
       console.error('Failed to fetch system status:', error);
       setStatus(null);
       
-      // Check if this is a mixed content error
-      if (window.location.protocol === 'https:' && error instanceof TypeError) {
+      // Check if this is a mixed content error or network error from HTTPS to HTTP
+      if (window.location.protocol === 'https:' && (
+        error instanceof TypeError || 
+        (error instanceof Error && error.message === 'Failed to fetch')
+      )) {
         setError('mixed-content');
       } else {
         setError('connection-failed');
