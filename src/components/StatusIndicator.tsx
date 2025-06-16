@@ -62,11 +62,11 @@ const StatusIndicator: React.FC = () => {
 
   if (error === 'mixed-content') {
     return (
-      <div className="flex items-center space-x-2 px-3 py-1 bg-amber-50 rounded-full cursor-pointer" 
+      <div className="flex items-center space-x-2 px-3 py-1 bg-amber-50 rounded-full cursor-pointer hover:bg-amber-100 transition-colors" 
            onClick={() => window.location.href = 'http://localhost:5173'}
-           title="Click to switch to HTTP">
+           title="Click to switch to HTTP version to connect to backend">
         <Globe className="w-4 h-4 text-amber-600" />
-        <span className="text-sm font-medium text-amber-800">Use HTTP Version</span>
+        <span className="text-sm font-medium text-amber-800">Switch to HTTP</span>
       </div>
     );
   }
@@ -87,11 +87,29 @@ const StatusIndicator: React.FC = () => {
     const kafkaOk = services.kafka.status === 'UP';
 
     if (minioOk && kafkaOk && emailOk) {
-      return { color: 'green', text: 'All Systems Online', icon: CheckCircle };
+      return { 
+        bgColor: 'bg-green-50', 
+        textColor: 'text-green-800', 
+        iconColor: 'text-green-600',
+        text: 'All Systems Online', 
+        icon: CheckCircle 
+      };
     } else if (minioOk && kafkaOk) {
-      return { color: 'yellow', text: 'Email Not Configured', icon: AlertCircle };
+      return { 
+        bgColor: 'bg-yellow-50', 
+        textColor: 'text-yellow-800', 
+        iconColor: 'text-yellow-600',
+        text: 'Email Not Configured', 
+        icon: AlertCircle 
+      };
     } else {
-      return { color: 'red', text: 'System Issues', icon: XCircle };
+      return { 
+        bgColor: 'bg-red-50', 
+        textColor: 'text-red-800', 
+        iconColor: 'text-red-600',
+        text: 'System Issues', 
+        icon: XCircle 
+      };
     }
   };
 
@@ -99,9 +117,9 @@ const StatusIndicator: React.FC = () => {
   const StatusIcon = overallStatus.icon;
 
   return (
-    <div className={`flex items-center space-x-2 px-3 py-1 bg-${overallStatus.color}-50 rounded-full`}>
-      <StatusIcon className={`w-4 h-4 text-${overallStatus.color}-600`} />
-      <span className={`text-sm font-medium text-${overallStatus.color}-800`}>
+    <div className={`flex items-center space-x-2 px-3 py-1 ${overallStatus.bgColor} rounded-full`}>
+      <StatusIcon className={`w-4 h-4 ${overallStatus.iconColor}`} />
+      <span className={`text-sm font-medium ${overallStatus.textColor}`}>
         {overallStatus.text}
       </span>
     </div>
