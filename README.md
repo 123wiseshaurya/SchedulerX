@@ -2,7 +2,16 @@
 
 A fully functional job scheduling application with binary execution and script file execution abd automation  and email campaigns and its automation , built with Node.js backend and React frontend.
 
-## 🚀 Quick Start (5 Minutes Setup)
+## Screenshots
+
+![Uploading image.png…]()
+
+![image](https://github.com/user-attachments/assets/f064ed98-2552-450e-9c96-ac9f3c2f6a65)
+
+![image](https://github.com/user-attachments/assets/6aa95b4a-e69c-4048-a507-51603c716c8b)
+
+![image](https://github.com/user-attachments/assets/38eba12a-8fde-4c13-a1e5-331b483d0520)
+
 
 ## 🚀 Quick Start (5 Minutes Setup)
 
