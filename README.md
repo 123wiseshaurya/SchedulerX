@@ -1,6 +1,8 @@
 # JobScheduler Pro - Complete Enterprise Scheduling Platform
 
-A fully functional job scheduling application with binary execution and email campaigns, built with Spring Boot backend and React frontend.
+A fully functional job scheduling application with binary execution and script file execution abd automation  and email campaigns and its automation , built with Node.js backend and React frontend.
+
+## 🚀 Quick Start (5 Minutes Setup)
 
 ## 🚀 Quick Start (5 Minutes Setup)
 
