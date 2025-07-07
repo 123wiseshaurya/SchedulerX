@@ -215,39 +215,4 @@ For issues and questions:
 2. Ensure all services are running: `docker-compose ps`
 3. Restart if needed: `docker-compose restart`
 
-The system includes comprehensive error handling and logging to help diagnose problems.
 
-## 🎯 Usage Examples
-
-### Creating an Email Job
-1. Go to http://localhost:3000
-2. Click "Schedule Email" or navigate to Email Jobs
-3. Fill in the form with recipient, subject, and message
-4. Set the schedule time
-5. Click "Create Job"
-
-### Creating a Binary Job
-1. Go to File Manager and upload a file
-2. Navigate to Binary Jobs
-3. Select the uploaded file
-4. Choose processing type (compress, convert, analyze)
-5. Set schedule time and create the job
-
-### Monitoring Jobs
-- Dashboard shows real-time statistics
-- Job list shows all jobs with status
-- Click on any job to see detailed logs and status
-
-The system automatically processes jobs at their scheduled time and provides real-time updates on job status.
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch
-3. Make changes
-4. Add tests
-5. Submit pull request
-
-## 📄 License
-
-MIT License - see LICENSE file for details.
