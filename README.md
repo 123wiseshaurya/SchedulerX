@@ -1,4 +1,4 @@
-# JobScheduler Pro - Complete Enterprise Scheduling Platform
+# SchedulerX - Complete Enterprise Scheduling Platform
 
 A complete job scheduling system built with Node.js, React, Kafka, PostgreSQL, MinIO, and Redis for scheduling and processing email and binary jobs and script automation.
 
