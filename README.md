@@ -13,8 +13,7 @@ A complete job scheduling system built with Node.js, React, Kafka, PostgreSQL, M
 
 ![image](https://github.com/user-attachments/assets/38eba12a-8fde-4c13-a1e5-331b483d0520)
 
-A complete job scheduling system built with Node.js, React, Kafka, PostgreSQL, MinIO, and Redis for scheduling and processing email and binary jobs.
-
+MINIO CONSOLE👆
 ## 🚀 Quick Start
 
 1. **Clone the repository**:
